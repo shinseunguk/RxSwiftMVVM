@@ -10,21 +10,30 @@ import RxSwift
 import RxRelay
 
 class LoginViewModel {
+    var textEmail : String = ""
     // MARK: -  아이디, 비밀번호 유효성 체크
     let emailObserver = BehaviorRelay<String>(value: "")
     let passwordObserver = BehaviorRelay<String>(value: "")
     
     /// 아이디 비밀번호 유효성 체크
     var isValid: Observable<Bool> {
-        return Observable.combineLatest(emailObserver, passwordObserver).map { email, password in
-            print("Email : \(email), password : \(password)")
-            print(!email.isEmpty && email.contains("@") && email.contains(".") && password.count > 5)
-            return !email.isEmpty && email.contains("@") && email.contains(".") && password.count > 5
+        return emailObserver.asObservable().map { email in
+            self.textEmail = self.emailObserver.value
+            print("self.textEmail \(self.textEmail)")
+            return email.count > 3
         }
     }
     
     var hi: Observable<String> {
         return Observable.just(emailObserver.value)
+    }
+    
+    func loginSuccess() -> Bool {
+        if textEmail == "asdasd123" {
+            return true
+        }else {
+            return false
+        }
     }
     
     ///  Alamofire 로그인

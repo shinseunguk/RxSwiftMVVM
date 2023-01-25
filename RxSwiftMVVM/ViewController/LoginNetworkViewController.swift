@@ -30,12 +30,6 @@ class LoginNetworkViewController : UIViewController, ViewControllerAttributes {
         $0.layer.borderWidth = 1
         $0.layer.cornerRadius = 5
     }
-    lazy var passwordTextField = UITextField().then {
-        $0.placeholder = "비밀번호"
-        $0.layer.borderWidth = 1
-        $0.layer.cornerRadius = 5
-        $0.isSecureTextEntry = true
-    }
     lazy var loginBtn = UIButton().then {
         $0.setTitle("로그인", for: .normal)
         $0.backgroundColor = .systemBlue
@@ -55,7 +49,6 @@ class LoginNetworkViewController : UIViewController, ViewControllerAttributes {
         self.navigationItem.title = title
         
         self.view.addSubview(idTextField)
-        self.view.addSubview(passwordTextField)
         self.view.addSubview(loginBtn)
     }
     
@@ -66,14 +59,8 @@ class LoginNetworkViewController : UIViewController, ViewControllerAttributes {
             $0.width.equalTo(300)
             $0.height.equalTo(40)
         }
-        passwordTextField.snp.makeConstraints {
-            $0.top.equalTo(idTextField.snp.bottom).offset(20)
-            $0.centerX.equalToSuperview()
-            $0.width.equalTo(300)
-            $0.height.equalTo(40)
-        }
         loginBtn.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
+            $0.top.equalTo(idTextField.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(300)
             $0.height.equalTo(40)
@@ -86,11 +73,6 @@ class LoginNetworkViewController : UIViewController, ViewControllerAttributes {
             .bind(to: viewModel.emailObserver)
             .disposed(by: disposeBag) // RxSwift
         
-        passwordTextField.rx.text
-            .orEmpty // RxCocoa
-            .bind(to: viewModel.passwordObserver)
-            .disposed(by: disposeBag) // RxSwift
-        
         viewModel.isValid.bind(to: loginBtn.rx.isEnabled)
             .disposed(by: disposeBag)
         
@@ -99,21 +81,16 @@ class LoginNetworkViewController : UIViewController, ViewControllerAttributes {
             .bind(to: loginBtn.rx.alpha)
             .disposed(by: disposeBag)
         
-//        loginBtn.rx.tap.subscribe(
-//            onNext: { [weak self] _ in
-//                if self?.userEmail == self?.viewModel.emailObserver.value && self?.userPassword == self?.viewModel.passwordObserver.value{
-//                    let alert = UIAlertController(title: "로그인 성공", message: "환영합니다", preferredStyle: .alert)
-//                    let ok = UIAlertAction(title: "확인", style: .default)
-//                    alert.addAction(ok)
-//                    self?.present(alert, animated: true, completion: nil)
-//                } else {
-//                    let alert = UIAlertController(title: "로그인 실패", message: "아이디 혹은 비밀번호를 다시 확인해주세요", preferredStyle: .alert)
-//                    let ok = UIAlertAction(title: "확인", style: .default)
-//                    alert.addAction(ok)
-//                    self?.present(alert, animated: true, completion: nil)
-//                }
-//            }
-//        ).disposed(by: disposeBag)
+        loginBtn.rx.tap
+            .map(viewModel.loginSuccess)
+            .subscribe { TF in
+                if TF {
+                    print("로그인 성공 \(TF)")
+                }else {
+                    print("로그인 실패 \(TF)")
+                }
+            }
+        
     }
     
 }
