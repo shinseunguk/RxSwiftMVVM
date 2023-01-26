@@ -19,6 +19,8 @@
 		A2527DB2297D7D750031350B /* RxSwiftMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2527DB1297D7D750031350B /* RxSwiftMVVMTests.swift */; };
 		A2527DBC297D7D750031350B /* RxSwiftMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2527DBB297D7D750031350B /* RxSwiftMVVMUITests.swift */; };
 		A2527DBE297D7D750031350B /* RxSwiftMVVMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2527DBD297D7D750031350B /* RxSwiftMVVMUITestsLaunchTests.swift */; };
+		A25717562982B6B5009163D5 /* KioskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25717552982B6B5009163D5 /* KioskViewController.swift */; };
+		A25717582982BECF009163D5 /* KioskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25717572982BECF009163D5 /* KioskViewModel.swift */; };
 		A2C63BE4297D882B001A0825 /* StartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C63BE3297D882B001A0825 /* StartTableViewCell.swift */; };
 		A2C63BE6297E5CDC001A0825 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C63BE5297E5CDC001A0825 /* LoginViewController.swift */; };
 		A2C63BE8297E6158001A0825 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C63BE7297E6158001A0825 /* LoginViewModel.swift */; };
@@ -72,6 +74,8 @@
 		A2527DB7297D7D750031350B /* RxSwiftMVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftMVVMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2527DBB297D7D750031350B /* RxSwiftMVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftMVVMUITests.swift; sourceTree = "<group>"; };
 		A2527DBD297D7D750031350B /* RxSwiftMVVMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftMVVMUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A25717552982B6B5009163D5 /* KioskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskViewController.swift; sourceTree = "<group>"; };
+		A25717572982BECF009163D5 /* KioskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskViewModel.swift; sourceTree = "<group>"; };
 		A2C63BE3297D882B001A0825 /* StartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTableViewCell.swift; sourceTree = "<group>"; };
 		A2C63BE5297E5CDC001A0825 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A2C63BE7297E6158001A0825 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 				A2C63BEC297E78FA001A0825 /* LoginNetworkViewController.swift */,
 				A2C63BF3297FED78001A0825 /* WeatherViewController.swift */,
 				5E816E1D2980E3D5002BB4D3 /* SubjectViewController.swift */,
+				A25717552982B6B5009163D5 /* KioskViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				A2C63BE7297E6158001A0825 /* LoginViewModel.swift */,
 				A2C63BF5297FF006001A0825 /* WeatherViewModel.swift */,
 				5E816E1F2980FF7A002BB4D3 /* SubjectViewModel.swift */,
+				A25717572982BECF009163D5 /* KioskViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -538,6 +544,8 @@
 				A2C63BEF297E7B8A001A0825 /* User.swift in Sources */,
 				5E816E1E2980E3D5002BB4D3 /* SubjectViewController.swift in Sources */,
 				A2C63BF2297E7C69001A0825 /* Protocol.swift in Sources */,
+				A25717562982B6B5009163D5 /* KioskViewController.swift in Sources */,
+				A25717582982BECF009163D5 /* KioskViewModel.swift in Sources */,
 				A2C63BE6297E5CDC001A0825 /* LoginViewController.swift in Sources */,
 				A2527D9B297D7D740031350B /* AppDelegate.swift in Sources */,
 				A2527D9D297D7D740031350B /* SceneDelegate.swift in Sources */,

@@ -19,7 +19,7 @@ class StartViewController: UIViewController, ViewControllerAttributes {
             $0.edges.equalToSuperview()
         }
         
-        _ = ["RxSwift 로그인 예제 (하드코딩)", "RxSwift 로그인 예제 (서버 통신)", "RxSwift 날씨 API", "RxSwift Subject"].map {
+        _ = ["RxSwift 로그인 예제 (하드코딩)", "RxSwift 로그인 예제 (서버 통신)", "RxSwift 날씨 API", "RxSwift Subject", "RxSwift 키오스크"].map {
             tableViewArray.append($0)
         }
         
@@ -74,6 +74,10 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(VC, animated: true)
         case 3:
             let VC = SubjectViewController()
+            VC.titleString = tableViewArray[indexPath.row]
+            self.navigationController?.pushViewController(VC, animated: true)
+        case 4:
+            let VC = KioskViewController()
             VC.titleString = tableViewArray[indexPath.row]
             self.navigationController?.pushViewController(VC, animated: true)
         default:
